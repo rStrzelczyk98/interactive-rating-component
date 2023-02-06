@@ -1,0 +1,185 @@
+* {
+  font-family: 'Overpass', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightGrey: hsl(217, 12%, 63%);
+  --mediumGrey: hsl(216, 12%, 54%);
+  --mediumGreyTransparent: hsla(216, 12%, 54%, 0.1);
+  --darkBlue: hsl(213, 19%, 18%);
+  --darkBlueTransparent: hsl(213, 19%, 18%, 0.3);
+  --veryDarkBlue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--veryDarkBlue);
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: radial-gradient(
+    circle at top,
+    var(--darkBlue),
+    var(--darkBlueTransparent)
+  );
+  max-width: 37.5rem;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  margin: 2rem;
+}
+
+.card h1 {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--lightGrey);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  position: relative;
+  background-color: var(--mediumGreyTransparent);
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 5rem;
+  margin-bottom: 2.5rem;
+}
+.icon span {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(5, min-content);
+  row-gap: 2rem;
+  justify-content: space-between;
+}
+
+input {
+  display: none;
+}
+
+label {
+  background-color: var(--mediumGreyTransparent);
+  color: var(--lightGrey);
+  font-size: 1.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 5em;
+  position: relative;
+}
+label span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label:hover {
+  cursor: pointer;
+  background-color: var(--mediumGrey);
+  color: var(--white);
+}
+input:checked + label {
+  background-color: var(--orange);
+  color: var(--white);
+}
+.form:invalid button {
+  pointer-events: none;
+  text-decoration: line-through;
+  background-color: var(--mediumGreyTransparent);
+  color: var(--lightGrey);
+}
+
+.btn {
+  background-color: var(--orange);
+  color: var(--white);
+  grid-column: 1/6;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 1.5rem 1em 0.75em;
+  border-radius: 5em;
+  border: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.thank-you {
+  text-align: center;
+  padding: 3rem;
+}
+
+.thank-you h2 {
+  color: var(--white);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.rating-out {
+  background-color: var(--mediumGreyTransparent);
+  color: var(--orange);
+  font-weight: 400;
+  font-size: 1.4rem;
+  width: fit-content;
+  padding: 0.5rem 1.5rem 0.3rem;
+  border-radius: 5rem;
+  margin: 1.5rem auto;
+}
+
+.attribution {
+  color: var(--mediumGrey);
+  font-size: 1.1rem;
+  text-align: center;
+}
+.attribution a {
+  color: var(--orange);
+}
+
+@media screen and (min-width: 400px) {
+  .form {
+    row-gap: 2.5rem;
+  }
+  label {
+    width: 5rem;
+    height: 5rem;
+  }
+  .icon {
+    width: 5rem;
+    height: 5rem;
+  }
+}
